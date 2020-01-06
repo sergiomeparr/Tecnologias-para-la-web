@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#1").click(function(){
+					$("#div1").load("Contenido.txt");
+				});
+				$("#2").click(function() {
+					$("#div1").hide(1500);
+				});
+				$("#c10").click(function(){
+					$.get('Contenido.txt', function(data, status){
+						alert("Data: " + data + "\nStatus: " + status);
+					});
+				});
+				$("#c11").click(function() {
+					var version=$().jquery;
+					alert("Estas usando la version: " +version+" de JQuery");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id = "1">Obtener contenido externo</button>
+		<button id = "2"> Ocultar contenido externo</button>
+		
+		<h2>Texto de la pagina principal</h2>
+		<div id="div1">
+		</div>
+		
+		<button id = "c10">	Codigo fuente</button>
+		<button id = "c11">	Version</button>
+	
+	</body>
+</html>

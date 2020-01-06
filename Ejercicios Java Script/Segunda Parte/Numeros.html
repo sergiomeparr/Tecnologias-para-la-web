@@ -1,0 +1,129 @@
+<!--Numero Maravilloso -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title> Ejercicio </title>
+		<script>
+			var i;
+			var j;
+			var num;
+			var fibonacci;
+			var primo;
+			var bandera = 0;
+			var contador = 1;
+			var contador2 = 0;
+			var contador3 = 0;
+			var palabra;
+			numero = window.prompt("Numero?: ");
+			palabra =  window.prompt("Palabra?: ");
+			var aux_maravilloso = [numero + 1];
+			var aux_fibonacci = [numero + 1];
+			var aux_primo = [numero + 1];
+			var aux1_palabra = [200];
+			var aux2_palabra = [200];
+			aux_maravilloso[0] = numero;
+			primo =  numero;
+			fibonacci =  numero;
+			<!-- Operaciones para Numero Maravilloso -->
+				while( numero != 2){
+					if(numero % 2 == 0){
+						numero =  numero / 2;
+					}
+					else{
+						numero  =  (numero * 3) + 1;
+					}
+					aux_maravilloso[contador] = numero;
+					contador++;
+				}
+				aux_maravilloso[contador] = 1;
+				for(i = 0; i <= contador; i++){
+					document.write(aux_maravilloso[i] + ", ");
+				}
+				document.writeln("<h1>El numero: "+ aux_maravilloso[0] + ", Es maravilloso</h1>");
+				
+				contador = 0;
+				aux_fibonacci[0] = 1;
+				aux_fibonacci[1] = 2;
+			
+			<!-- Operaciones para Fibonacci -- >
+				for(i = 2; i < fibonacci; i++){
+					aux_fibonacci[i] =  aux_fibonacci[i - 2] + aux_fibonacci[i - 1]; 
+				}
+				<!-- Buscando si es fibonacci -- >
+				for(i = 0; i < fibonacci; i++){
+					if(aux_fibonacci[i] == fibonacci){
+						bandera = 1;
+						break;
+					}
+				}
+				<!--Impresion de pantalla -- >
+				for(i = 0; i < fibonacci; i++){
+					document.write(aux_fibonacci[i] + ", ");
+				}
+				
+				<!--Verificando que sea fibonacci -->
+				if(bandera)
+					document.writeln("<h1>El numero " + fibonacci + ", Es fibonacci</h1>");
+				else
+					document.writeln("<h1>El numero " + fibonacci + ", No es fibonacci</h1>");
+				
+			
+				bandera = 0;
+				
+			<!-- Operaciones Primos -->
+				for(i = 2; i <= primo; i++){
+					for(j = 2; j <= i; j++){
+						if(i % j == 0)
+							bandera++;
+					}
+					if(bandera == 1){
+						aux_primo[contador] = i;
+						contador++;
+					}
+					bandera= 0;
+				}
+				bandera = 0
+				<!--Verificar que no existe el arreglo-->
+				for(i = 0; i < contador; i++){
+					document.writeln(aux_primo[i] + ", ");
+					if(primo == aux_primo[i]){
+						bandera = 1;
+						break;
+					}
+				}
+				
+				if(bandera)
+					document.writeln("<h1>El numero " + primo + ", Es Primo</h1>");
+				else
+					document.writeln("<h1>El numero " + primo + ", No es Primo</h1>");
+				
+				bandera = 0;
+			<!--Operaciones Palindrome-->
+				aux2_palabra = palabra.replace(/\s+/gi,"");
+				contador = aux2_palabra.length;
+				
+				for(i = contador - 1; i >= 0 ; i --){
+					aux1_palabra[contador2] = aux2_palabra[i];
+					contador2++;
+				}
+				contador2 = aux1_palabra.length;
+				contador3 = contador2;
+				for(i = 0; i < contador2 - 1; i++){
+					if(aux1_palabra[i] != aux2_palabra[i]){
+						bandera = 1;
+						break;
+					}
+					contador3--;
+				}
+				if(bandera == 0)
+					document.writeln("<h1>La palabra: '" + palabra + " ', Es palindroma</p>");	
+				else
+					document.writeln("<h1>La palabra: '" + palabra + " ', No es palindroma</p>");	
+				
+		</script>
+	</head>
+	<body>
+	</body>
+</html>	
+	

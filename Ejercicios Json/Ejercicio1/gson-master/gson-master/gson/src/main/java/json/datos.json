@@ -1,0 +1,24 @@
+{ 
+"responsable":     
+	{     
+		"Nombre" : "Juan",     
+		"Edad": 28,     
+		"Aficiones": ["Musica", "Cine", "Tenis"],     
+		"Residencia": "Madrid"     
+	}, 
+"empleados":     
+	[         
+		{         
+			"Nombre" : "Elena",         
+			"Edad": 26,         
+			"Aficiones": ["Musica", "Cine"],         
+			"Residencia": "Madrid"         
+		},         
+		{         
+			"Nombre" : "Luis",         
+			"Edad": 31,         
+			"Aficiones": ["Teatro", "Cine", "Futbol"], 
+			"Residencia": "Madrid"         
+		}     
+	]
+}	

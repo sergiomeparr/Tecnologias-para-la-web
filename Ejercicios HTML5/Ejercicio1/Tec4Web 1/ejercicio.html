@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id = "dibujar" width = "400" height = "400"  style = "border: 1px solid black;"> 
+		</canvas>
+		<script>    
+			<!-- Plano cartesiano-->
+			var canvas = document.getElementById("dibujar");
+			var contexto = canvas.getContext("2d");
+			
+			//Obtencion de datos de la pagina principal
+			//Area
+			document.write("<br>");
+			document.write("Area = " + localStorage.getItem("nombre_variable") + "u^2");
+			document.write("<br>");
+			document.write("<br>");
+			//Perímetro
+			document.write("Perimetro = " + localStorage.getItem("nombre_variable1") + "u");
+			document.write("<br>");
+			document.write("<br>");
+			
+			document.write("Coordenadas");
+			document.write("<br>");
+			
+			//x1, y1
+			document.write("V1");
+			document.write("( " + localStorage.getItem("nombre_variable2") + ", " + localStorage.getItem("nombre_variable3") + ")");
+			document.write("<br>");
+			document.write("<br>");
+			
+			//x2, y2
+			document.write("V2");
+			document.write("( " + localStorage.getItem("nombre_variable4") + ", " + localStorage.getItem("nombre_variable5") + ")");
+			document.write("<br>");
+			document.write("<br>");
+			
+			//x3, y3
+			document.write("V3");
+			document.write("( " + localStorage.getItem("nombre_variable6") + ", " + localStorage.getItem("nombre_variable7") + ")");
+			document.write("<br>");
+			document.write("<br>");
+			
+			contexto.beginPath();
+			contexto.moveTo(0, 200); // origen de la ruta 
+			contexto.lineTo(400, 200);
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+			
+			contexto.beginPath();
+			contexto.moveTo(200, 0); // origen de la ruta 
+			contexto.lineTo(200, 400);
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+			
+			contexto.beginPath();
+			for(var i = 40; i <= 400; i += 40){
+				contexto.moveTo(i, 190); // origen de la ruta 
+				contexto.lineTo(i, 210);
+			}
+			<!--Numeros en Plano cartesiano-->
+			contexto.fillText(-4, 40, 220);
+			contexto.fillText(-3, 80, 220);
+			contexto.fillText(-2, 120, 220);
+			contexto.fillText(-1, 160, 220);
+			contexto.fillText(1, 240, 220);
+			contexto.fillText(2, 280, 220);
+			contexto.fillText(3, 320, 220);
+			contexto.fillText(4, 360, 220);
+			
+			contexto.fillText(4, 180, 40);
+			contexto.fillText(3, 180, 80);
+			contexto.fillText(2, 180, 120);
+			contexto.fillText(1, 180, 160);
+			contexto.fillText(-1, 180, 240);
+			contexto.fillText(-2, 180, 280);
+			contexto.fillText(-3, 180, 320);
+			contexto.fillText(-4, 180, 360);
+				
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+			
+			contexto.beginPath();
+			for(var i = 40; i <= 400; i += 40){
+				contexto.moveTo(190, i); // origen de la ruta 
+				contexto.lineTo(210, i);
+			}
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+			
+			<!--Triangulo-->
+			contexto.beginPath();
+			contexto.moveTo(200 + (localStorage.getItem("nombre_variable2") * 40), 200 - (localStorage.getItem("nombre_variable3") * 40)); // origen de la ruta para dibujar el triangulo 
+			contexto.fillText("(" + localStorage.getItem("nombre_variable2") + ", " + localStorage.getItem("nombre_variable3") + ")", 200 + (localStorage.getItem("nombre_variable2") * 40), 200 - (localStorage.getItem("nombre_variable3") * 40));
+			contexto.lineTo(200 + (localStorage.getItem("nombre_variable4")  * 40), 200 - (localStorage.getItem("nombre_variable5") * 40));  
+			contexto.fillText("(" + localStorage.getItem("nombre_variable4") + ", " + localStorage.getItem("nombre_variable5") + ")", 200 + (localStorage.getItem("nombre_variable4")  * 40), 200 - (localStorage.getItem("nombre_variable5") * 40));
+			contexto.lineTo(200 + (localStorage.getItem("nombre_variable6") * 40), 200 - (localStorage.getItem("nombre_variable7") * 40)); 
+			contexto.fillText("(" + localStorage.getItem("nombre_variable6") + ", " + localStorage.getItem("nombre_variable7") + ")", 200 + (localStorage.getItem("nombre_variable6") * 40), 200 - (localStorage.getItem("nombre_variable7") * 40));
+			contexto.lineTo(200 + (localStorage.getItem("nombre_variable2") * 40), 200 - (localStorage.getItem("nombre_variable3") * 40)); // origen de la ruta para dibujar el triangulo 
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "red" // color de la linea
+			contexto.stroke(); // dibujar ruta
+			
+		</script>	
+	</body>
+</html>	

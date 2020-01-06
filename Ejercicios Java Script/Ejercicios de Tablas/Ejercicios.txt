@@ -1,0 +1,11 @@
+-Ejercicio
+
+*Diseñe una página web que calcule:
+
+1.- Suma de matrices
+2.- Producto de matrices
+
+
+-Ejercicio 2
+
+*Diseñar un pagina web que haga el cuadro magico

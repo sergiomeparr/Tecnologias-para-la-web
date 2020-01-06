@@ -1,0 +1,86 @@
+<!--Uso de Tablas: Ejemplos-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset =  "utf-8">
+		<title>Juego del Gato</title>
+		<link rel = "stylesheet" type = "text/css" href = "tabla.css">
+	</head>
+	<body>
+		<h2 align = "center"> Juego del Gato </h2>
+		<table id = "gato" cellspacing = "0" align = "center">
+			<tr>
+				<td id = "c1" class = "gato"></td>
+				<td id = "c2" class = "gato"></td>
+				<td id = "c3" class = "gato"></td>
+			</tr>
+			<tr>		
+				<td id = "c4" class = "gato"></td>
+				<td id = "c5" class = "gato"></td>
+				<td id = "c6" class = "gato"></td>
+			</tr>
+			<tr>
+				<td id = "c7" class = "gato"></td>
+				<td id = "c8" class = "gato"></td>
+				<td id = "c9" class = "gato"></td>
+			</tr>
+		</table>
+		<script>
+			var turno = 1;
+			var arregloGato = new Array(9);
+			var celdas = document.getElementsByClassName("gato");  <!--Tomar todos los elemento de la clase gato --> 
+			
+			function ganaJugador(letter){
+									<!--Casos para ganar juego -->
+			
+				if((arregloGato[0] == letter  && arregloGato[1] == letter && arregloGato[2] == letter) ||
+				   (arregloGato[3] == letter  && arregloGato[4] == letter && arregloGato[5] == letter) ||
+				   (arregloGato[6] == letter  && arregloGato[7] == letter && arregloGato[8] == letter) ||
+				   (arregloGato[0] == letter  && arregloGato[4] == letter && arregloGato[8] == letter) ||
+				   (arregloGato[2] == letter  && arregloGato[4] == letter && arregloGato[6] == letter) ||
+				   (arregloGato[0] == letter  && arregloGato[3] == letter && arregloGato[6] == letter) ||
+				   (arregloGato[1] == letter  && arregloGato[4] == letter && arregloGato[7] == letter) ||
+				   (arregloGato[2] == letter  && arregloGato[5] == letter && arregloGato[8] == letter)){
+						alert("El jugador "+  letter + " gana");
+						window.location.reload();
+				}
+				
+				
+			}
+			
+			function gato(event){
+				var celda =  event.target;
+				var idcelda =  event.target.id;
+				var marcar_posicion = idcelda[1] - 1;
+				queturno = turno % 2;
+				if(queturno != 0){    				<!--verificar si es impar para que el jugador X tire -->
+					celda.innerHTML = "X";  		<!--Ponemos una X mayuscula en una celda
+					celda.style.background = "#EEE8AA";
+					arregloGato[marcar_posicion] = "X";
+					ganaJugador("X");
+				}
+				else if(queturno == 0){
+					celda.innerHTML = "O";  		<!--Ponemos una 0 mayuscula en una celda
+					celda.style.background = "#F0E68C";
+					arregloGato[marcar_posicion] = "O";
+					ganaJugador("O");
+				}
+				if(turno == 9){
+					alert("Empate");
+					window.location.reload();		<!--Si hay una empate, se vuelve a cargar la pagina-->
+				}
+				else
+					turno++;
+			}
+			
+			function cargarDocumento(){
+				for(var i = 0; i < celdas.length; i++){			<!--Se añaden eventos de click a todas las celdas-->
+					celdas[i].addEventListener("click", gato);
+				}
+			}
+			
+			window.addEventListener("load", cargarDocumento);
+
+			</script>	
+	</body>
+</html>		

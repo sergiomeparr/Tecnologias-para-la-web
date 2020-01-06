@@ -1,0 +1,39 @@
+<!-- Dibujo de una curva de Bezier sobre un canvas. --> 
+<!DOCTYPE html> 
+<html> 
+	<head>
+		<meta charset = "utf-8">
+		<title>Curvas de Bezier</title>
+	</head>
+	<body> 
+		<canvas id = "dibujarBezier" width = "600" height = "150"> 
+		</canvas>
+		<script>    
+			var canvas = document.getElementById("dibujarBezier");
+			var contexto = canvas.getContext("2d");
+			contexto.beginPath();
+			for(var i = 0; i < 30; i += 0.04375){
+				contexto.moveTo(7 * i * Math.PI - 20, 40 * Math.sin(i * Math.PI) + 75); // origen de la ruta 
+				contexto.lineTo(7 * i * Math.PI - 21, 40 * Math.sin(i * Math.PI) + 75);
+			}
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+		</script>
+		<canvas id = "dibujarLineas" width = "300" height = "200">
+		</canvas>   
+		<script>    
+			var canvas = document.getElementById("dibujarLineas");
+			var contexto = canvas.getContext("2d");// lineas rojas sin una ruta cerrada
+			contexto.beginPath(); // comenzar una nueva ruta
+			for(var i = 0; i < 400; i+= 2){
+				contexto.moveTo(i + 1, (i + 1) / 2); // origen de la ruta 
+				contexto.lineTo(i + 2, (i + 2) / 2);
+			}
+			contexto.lineWidth = 1; // anchura de la linea
+			contexto.strokeStyle = "blue" // color de la linea
+			contexto.stroke(); // dibujar ruta
+		</script> 
+	</body>
+</html>	
+ 

@@ -1,0 +1,104 @@
+<!--Ejemplo, Analizar el siguiente código para el uso de tablas-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Uso de tablas</title>
+		<script>
+			var filaA =  window.prompt("Fila MatrizA:? ");
+			var columnaA =  window.prompt("Columna MatrizA:? ");
+			var filaB =  window.prompt("Fila MatrizB:? ");
+			var columnaB =  window.prompt("Columna MatrizB:? ");
+			var suma = 0;
+			var multiplicacion = 0;
+			var matrizA = new Array(filaA);
+			var matrizB =  new Array(filaB);
+			
+				
+			
+			for(var i = 1; i <= filaA; i++)
+				matrizA[i] = new Array(columnaA);
+			for(var i = 1; i <= filaB; i++)
+				matrizB[i] =  new Array(columnaB);
+			
+			
+			<!--Datos en la matrizA y MatrizB-->
+			for(var i = 1; i <= filaA; i++){
+				for(var j = 1; j <= columnaA; j++){
+					matrizA[i][j] = window.prompt("Dato: " + i + " , " + j);
+				}
+			}
+			for(var i = 1; i <= filaB; i++){
+				for(var j = 1; j <= columnaB; j++)
+					matrizB[i][j] = window.prompt("Dato: " + i + " , " + j);
+			}
+			
+			<!-- Mostrando datos de la matriz A -->
+			document.writeln("<h2> Matriz A </h2>");
+			document.writeln("<table>");
+			for(var i = 1; i <= filaA; i++){
+				document.writeln("<tr>");
+				for(var j = 1; j <= columnaA; j++){
+					document.writeln("<td> " + matrizA[i][j]+ "</td>");
+				}
+				document.writeln("</tr>");
+			}
+			document.writeln("</table>")
+			document.writeln("<br>");
+			
+			<!-- Mostrando datos de la matriz B -->
+			document.writeln("<h2> Matriz B </h2>");
+			document.writeln("<table>");
+			for(var i = 1; i <= filaB; i++){
+				document.writeln("<tr>");
+				for(var j = 1; j <= columnaB; j++){
+					document.writeln("<td> " + matrizB[i][j]+ "</td>");
+				}
+				document.writeln("</tr>");
+			}
+			document.writeln("</table>")
+			
+			<!-- Suma de matrices -->
+			if(filaA != filaB || columnaA != columnaB){
+				document.writeln("<h2> Suma </h2>");
+				document.writeln("<p> No se pueden sumar las matrices ");
+			}
+			else{
+				document.writeln("<h2> Suma </h2>");
+				document.writeln("<table>");
+				for(var i = 1; i <= filaA; i++){
+					document.writeln("<tr>");
+					for(var j = 1; j <= columnaA; j++){
+						suma = parseFloat(matrizA[i][j]) + parseFloat(matrizB[i][j]); 
+						document.writeln("<td> " + suma + "</td>");
+					}
+					document.writeln("</tr>");
+				}
+				document.writeln("</table>")
+			}
+			
+			<!-- Multiplicacion de Matrices -->
+			document.writeln("<h2> Multiplicacion </h2>");
+			document.writeln("<table>");
+			for(var i = 1; i <= filaA; i++){
+				document.writeln("<tr>");
+				for(var j = 1; j <= columnaB; j++){
+					multiplicacion = 0;
+					for(var k = 1; k <= filaB; k++){
+						multiplicacion += parseFloat(matrizA[i][k]) * parseFloat(matrizB[k][j]);
+					}
+					document.writeln("<td>" + multiplicacion + "</td>");
+				}
+				document.writeln("</tr>");
+			}
+			
+			document.writeln("</table>");
+				
+			
+			
+		</script>
+	</head>
+	<body>
+		<h2>Ejemplo de tablas </h2>
+	</body>
+</html>	

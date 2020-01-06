@@ -1,0 +1,229 @@
+<!-- HTML5 y CSS -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Introducci&oacute;n a HTML5 y CSS</title>
+		<link rel="stylesheet" href="master.css" type="text/css" media="screen" />	
+	</head>
+	<body>
+		<script>
+				/*var matrizA = new Array(3);
+				
+				for(var i = 1; i <= 3; i++)
+					matrizA[i] = new Array(3);
+				
+				<!--Datos en la matrizA y MatrizB-->
+				for(var i = 1; i <= 3; i++){
+					for(var j = 1; j <= 3; j++){
+						matrizA[i][j] = window.prompt("Dato: " + i + " , " + j);
+					}
+				}
+			
+				for(var i = 1; i <= 3; i++){
+					for(var j = 1; j <= 3; j++){
+						document.writeln("(" + matrizA[i][j] + ")");
+					}
+					document.writeln("<br>");
+				}
+				
+				var area = (1/2) * ((matrizA[1][1] * matrizA[2][2] * matrizA[3][3]) + (matrizA[2][1] * matrizA[3][2] * matrizA[1][3]) + (matrizA[3][1] * matrizA[1][2] * matrizA[2][3])) - ((matrizA[1][1] * matrizA[2][2] * matrizA[3][3]) + (matrizA[2][1] * matrizA[3][2] * matrizA[1][3]) + (matrizA[3][1] * matrizA[1][2] * matrizA[2][3]));
+				var perimetro = Math.sqrt(((matrizA[2][1] - matrizA[1][1]) * (matrizA[2][1] - matrizA[1][1])) + ((matrizA[2][2] - matrizA[1][2]) * (matrizA[2][2] - matrizA[1][2])));
+				var perimetro1 = Math.sqrt(((matrizA[3][1] - matrizA[2][1]) * (matrizA[3][1] - matrizA[2][1])) + ((matrizA[3][2] - matrizA[2][2]) * (matrizA[3][2] - matrizA[2][2])));
+				var perimetro2 = Math.sqrt(((matrizA[3][1] - matrizA[1][1]) * (matrizA[3][1] - matrizA[1][1])) + ((matrizA[3][2] - matrizA[1][2]) * (matrizA[3][2] - matrizA[1][2])));
+				var total = perimetro + perimetro1 + perimetro2; 
+				if(area < 0){
+					area = -1 * area;
+				}
+				
+				//Envio de datos a la segunda página
+				window.onload = function() {
+					//var getInput = prompt("Escribe algo: ");
+					localStorage.setItem("nombre_variable", area);
+					localStorage.setItem("nombre_variable1", total);
+					// x1, y1
+					localStorage.setItem("nombre_variable2", matrizA[1][1]);
+					localStorage.setItem("nombre_variable3", matrizA[1][2]);
+					// x2, y2
+					localStorage.setItem("nombre_variable4", matrizA[2][1]);
+					localStorage.setItem("nombre_variable5", matrizA[2][2]);
+					// x3, y3
+					localStorage.setItem("nombre_variable6", matrizA[3][1]);
+					localStorage.setItem("nombre_variable7", matrizA[3][2]);
+				
+				}*/
+		</script>
+		<!--<br>
+		<input type="button" value = " siguiente pagina" onclick = "location='C:/Users/Sergi/Desktop/Tecnologias para la Web/Ejercicios HTML5/Ejercicio1/Tec4Web 1/ejercicio.html'"/> 
+		-->
+		<header>
+			<h1>El Blog de la Flor</h1>
+		</header>
+		<nav>
+			<ul>
+				<li class="selected"><a href="#">Blog</a></li>
+				<li><a href="#">Acerca</a></li>
+				<li><a href="#">Archivos</a></li>
+				<li><a href="#">Contacto</a></li>
+				<li class="subscribe"><a href="#">Subscribir. RSS</a></li>
+			</ul>
+		</nav>
+		<!--
+			//Ponemos un recuadro para la imagen. Quitar para ver
+		<section id="intro">
+			<header>
+				<h2>Tienes tantas flores como nosostros?</h2>
+			</header>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+			<img src="bandera_mexico.png" alt="Flor"/>
+		</section>
+		-->	
+		<br><br>	
+		<div align="center"><img src="bandera_mexico.png" alt = "Flor"></div>
+		
+		<!--<img src="bandera_mexico.png" alt="Flor" width = "700" heigth= "400"/> -->
+	
+		<div id="content">
+			<div id="mainContent">
+				<section>
+					<article class="blogPost">
+						<header>
+							<h2>Himno Nacional Mexicano</h2>
+							<p>Enviado el <time datetime="2016-06-29T23:31+01:00">June 29th 2016</time> by <a href="#">Alguien</a> - <a href="#comments">3 comments</a></p>
+						</header>
+						<div>
+							<p>Coro
+							<br>
+							<p> Mexicanos, al grito de guerra
+								El acero aprestad y el bridón;
+								Y retiemble en sus centros la tierra
+								Al sonoro rugir del cañón.
+							<br>
+							<p> Estribillo
+							<br>
+							<p>	ciña ¡oh patria! tus sienes de oliva
+								de la paz el arcángel divino,
+								que en el cielo tu eterno destino
+								por el dedo de dios se escribió.
+								Más si osare un extraño enemigo
+								profanar con su planta tu suelo, 
+								piensa ¡oh patria querida! que el cielo
+								un soldado en cada hijo te dio.
+							<br>	
+							<p>Estribillo 2
+							<br>
+							<p>¡Guerra, guerra sin tregua al que intente
+								De la patria manchar los blasones!,
+								¡Guerra, guerra! los patrios pendones
+								En las olas de sangre empapad.
+								¡Guerra, guerra! en el monte, en el valle,
+								Los cañones horrísonos truenen
+								Y los ecos sonoros resuenen
+								Con las voces de ¡Unión! ¡Libertad!
+							<a name = "escudo"><img src="escudo_mexico.png" alt="Flower" width="300" height="300"/></a>
+							<br>
+							
+						</div>
+					</article>
+				</section>
+				<section id="comments">
+					<h3>Comments</h3>
+					<article>
+						<header>
+							<a href="#">Benito Ju&aacute;rez</a> on <time datetime="2016-06-29T23:35:20+01:00">June 29th 2016 at 23:35</time>
+						</header>
+						<!--
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+						-->
+					</article>
+					<article>
+						<header>
+							<a href="#">Francisco Villa</a> on <time datetime="2016-06-29T23:40:09+01:00">June 29th 2016 at 23:40</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					</article>
+					<article>
+						<header>
+							<a href="#">Emiliano Zapata</a> on <time datetime="2016-06-29T23:59:00+01:00">June 29th 2016 at 23:59</time>
+						</header>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+					</article>
+				</section>
+				<form action="#" method="post">
+					<h3>Enviar un comentario</h3>
+					<p>
+						<label for="name">Nombre</label>
+						<input name="name" id="name" type="text" required />
+					</p>
+					<p>
+						<label for="email">E-mail</label>
+						<input name="email" id="email" type="email" required />
+					</p>
+					<p>
+						<label for="website">Website</label>
+						<input name="website" id="website" type="url" />
+					</p>
+					<p>
+						<label for="comment">Comentario</label>
+						<textarea name="comment" id="comment" required></textarea>
+					</p>
+					<p><input type="submit" value="Post comment" /></p>
+				</form>
+			</div>
+			<aside>
+				<section>
+				<header>
+					<h3>Categor&iacute;as</h3>
+				</header>
+					
+						
+				</section>
+				<section>
+					<header>
+						<h3>Archives</h3>
+					</header>
+					<ul>
+						<li><a href="#">Diciembre 2015</a></li>
+						<li><a href="#">Enero 2016</a></li>
+						<li><a href="#">Febrero 2016</a></li>
+						<li><a href="#">Marzo 2016</a></li>
+						<li><a href="#">Abril 2016</a></li>
+						<li><a href="#">Mayo 2016</a></li>
+						<li><a href="#">Junio 2016</a></li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+		<footer>
+			<div>
+				<section id="about">
+					<header>
+						<h3>Acerca</h3>
+					</header>
+					<p> alumno: Sergio Mendoza Parra.
+					<p> grupo: 2CM8.
+					<p> Materia: Tecnologias para la Web.
+				</section>
+				<section id="blogroll">
+					<header>
+						<h3>Bibliografía</h3>
+					</header>
+					<ul>
+						<li><a href="#">https://musicaenmexico.com.mx/himno-nacional-mexicano/</a></li>
+						<li><a href="#">https://www.musica.com/letras.asp?letra=47362</a></li>
+						<li><a href="#">http://www.banderas-mundo.es/mexico</a></li>
+						<li><a href="#">https://www.mientrastantoenmexico.mx/encuentra-error-escudo-nacional-mexicano/</a></li>
+					</ul>
+				</section>
+				<section id="popular">
+					<header>
+						<h3>Popular</h3>
+					</header>
+					<ul>
+						<a href = "HtmlCSS Ejemplo1.html#escudo"><li><a href="#">Escudo Mexicano</a></li>
+						
+					</ul>
+				</section>
+			</div>
+		</footer>
+	</body>
+</html>

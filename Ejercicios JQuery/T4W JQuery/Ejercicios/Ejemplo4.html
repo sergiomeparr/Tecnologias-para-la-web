@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#c4").click(function() {
+					$("p").fadeToggle(3000);
+				});
+				
+				$("#c5").click(function() {
+					$("p").fadeIn(3000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<h2>This is a heading</h2>
+
+		<p>This is a paragraph.</p>
+		<p>This is another paragraph.</p>
+
+		<button id = "c4">Desvanecer</button>
+		<button id = "c5">Mostrar</button>
+		
+	</body>
+</html>

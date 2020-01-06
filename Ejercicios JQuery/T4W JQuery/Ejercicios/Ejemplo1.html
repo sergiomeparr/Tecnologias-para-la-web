@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#Ocultar").click(function() {
+					$("p").hide(1500);
+				});
+				$("#Mostrar").click(function() {
+					$("p").show("slow");
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<h2>This is a heading</h2>
+
+		<p>This is a paragraph.</p>
+		<p>This is another paragraph.</p>
+
+		<button id = "Ocultar">Ocultar</button>
+		<button id = "Mostrar">Mostrar</button>
+		
+	</body>
+</html>

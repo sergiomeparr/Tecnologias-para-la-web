@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cuadro Magico</title>
+		<SCRIPT TYPE="text/javascript">
+   
+			var limite = prompt("Dame el numero IMPAR para el numero de filas y columnas del cuadro Magico");//Tiene que ser impar!
+			var cuad = new Array();
+			for (var x = 0; x < limite; x++)
+				cuad[x] = new Array(limite);
+	   
+			cuad = meterCeros(cuad);
+			cuad = creaCuadrado(cuad);
+			imprimeArrayBi(cuad);
+			function meterCeros(cuad){
+				for(var x = 0; x < cuad.length; x++){
+					for (var y = 0; y < cuad.length; y++)
+						cuad[x][y] = 0;
+				}
+				return cuad;
+			}
+	 
+			function creaCuadrado(cuad){
+				var mitad = parseInt(cuad.length / 2);
+				var x = 0;
+				var y = mitad;
+				var cont = 1;
+				do{
+					cuad[x][y] = cont;
+					if (cuad[siguienteFila(x, cuad)][siguienteColumna(y, cuad)] != 0){
+						if(x + 1 == cuad.length)
+							x=0;
+						else 
+							x++;
+					}
+					else{
+						x = siguienteFila(x, cuad);
+						y = siguienteColumna(y, cuad);
+					}
+					cont++;
+				}while(cuad[x][y] == 0);
+				return cuad;
+			}
+	 
+			function siguienteFila(fila, cuad){
+				if((fila - 1) < 0) 
+					fila = cuad.length-1;//Colocamos la fila al final
+				else 
+					fila--; //subimos fila
+				return fila;
+			}
+	 
+			function siguienteColumna(columna, cuad){
+				if((columna + 1) > (cuad.length - 1)) 
+					columna = 0;//Colocamos la columna al principio
+				else 
+					columna++; //subimos columna
+				return columna;
+			}
+	 
+			function imprimeArrayBi(cuad){
+				document.write("<table>");
+				for (var x=0; x<cuad.length; x++){
+					document.write("<tr>");
+					for(var y=0; y<cuad.length; y++){
+						document.write("<td style='padding: 3px;border: 2px solid white; background: -webkit-linear-gradient(#acd859, #7fc339);background: -moz-linear-gradient(#acd859, #7fc339);background: white'>" + cuad[x][y]);
+					}
+					document.write("</tr>");
+				}
+			}
+		</SCRIPT>
+
+	</head>
+
+	<body>
+
+	<h2>Cuadro Magico:</h2> 
+	
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- 2.- Operaciones Básicas -->
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset = "utf-8">
+				<title>Ecuacion de Segundo Grado</title>
+				<script>
+						var a;
+						var b;
+						var c;
+						var n1;
+						var n2;
+						var n3;
+						var dis;
+						var aux;
+						var aux2;
+						var resultado1;
+						var resultado2;
+						a =  window.prompt("Constante A: ");
+						b =  window.prompt("Constante B: ");
+						c =  window.prompt("Constante C: ");
+						n1 = parseFloat(a);
+						n2 = parseFloat(b);
+						n3 = parseFloat(c);
+						dis = (n2 * n2) - (4 * n1 * n3);
+						aux = -1 * n2;
+						aux2 = -1 * dis;
+						if(dis < 0){
+							resultado1 = (aux + Math.sqrt(aux2)) / (2 * n1);
+							resultado2 = (aux - Math.sqrt(aux2)) / (2 * n1);
+							document.writeln("<h1>Raices complejas</h1>");
+							document.writeln("<h1>El resultado de x1 : " + resultado1 + "i </h1>");
+							document.writeln("<h1>El resultado de x2 : " + resultado2 + "i </h1>");
+						}
+						else if(dis >= 0){
+							resultado1 = (aux + Math.sqrt(dis)) / (2 * n1);
+							resultado2 = (aux - Math.sqrt(dis)) / (2 * n1);
+							document.writeln("<h1>El resultado de x1 es: " +  resultado1 + "</h1>");
+							document.writeln("<h1>El resultado de x2 es: " +  resultado2 + "</h1>");
+						}
+				</script>
+		</head>
+		<body>
+			Ecuacion de Segundo Grado
+		</body>
+</html>			

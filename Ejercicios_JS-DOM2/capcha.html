@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Validación de una expresión regular</title>
+		<script type="text/javascript">
+		function literal() {
+		var m = document.getElementById("matricula").value;
+		var n = document.getElementById("matricula2").value;
+		var er = /^([a-z]+[0-9]{0,3}){5,12}$/;
+		var er2 = /[A-Za-z0-9!?-]{8,12}/;
+		if(er.test(m)){
+			alert("El usuario es correcto");
+			if(er2.test(n))
+				alert("La contraseña es correcta");
+			else
+				alert("La contraseña NO es correcta");
+		}
+		else
+		alert("El usuario NO es correcto");
+		}
+		</script>
+	</head>
+	<body>
+		<form id="miFormulario" action="" method="get">
+		<p>
+		Usuario: <input type="text" id="matricula" /> <br />
+		Contrase&ntilde;a: <input type="text" id="matricula2" /> <br />
+		<input type="button" value="Iniciar sesion" onclick="literal()" />
+		</p>
+		</form>
+	</body>
+</html>

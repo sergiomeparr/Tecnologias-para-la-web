@@ -1,0 +1,32 @@
+<!---Frames
+
+Donde :
+	-rows:			Altura de filas.
+	-cols:			Ancho de columnas.
+	-framespacing:	Espacio entre frames.
+	-marginheigth:	Espacio vertidal(pixeles) entre objetos del marco y 
+					los extremos superior e inferior.
+	-marginwidth:	Espacio horizontal.
+	-name:			Nombre de ventanas FRAME para el destino de 
+					hipervínculos.
+	-noresize:		No pemite redimensionamiento del frame.
+	-scrolling:		Barra  de desplazamiento. Posee 3 parámetros:
+						* YES
+						* NO
+						* AUTO
+	-src: 			Muestra contenido de un documento HTML.
+	-<noframes>		Muestra texto o paginas alternativas si no se permiten frames. 	
+	 </noframes>	
+-->
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Uso de Frames</title>
+	</head>
+	<frameset cols ="20%, *" frameborder = "0" framespacing = "0" border = 0>
+		<frame name = "izquierda" src = "pag4.html" marginwidth = "0" marginheight = "auto" frameborder = "no" scrolling = "no">
+		<frame name = "principal" src = "pag3.html" marginwidth = "0" marginheight = "0" scrolling = "auto" frameborder = "no">
+		</frameset>
+	</frameset>	
+	
+</html>

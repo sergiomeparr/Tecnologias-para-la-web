@@ -1,0 +1,4 @@
+Ejercicio:
+
+Resolver una ecuacion de segundo grado: ax^2 + bx + c = 0 , 
+solicitando las constantes a, b y c y mostrar las dos raices

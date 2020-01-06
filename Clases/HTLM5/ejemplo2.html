@@ -1,0 +1,78 @@
+<!-- Otras secciones de HTML5 -->
+<section>
+	<article class = "blogPost"> 										<!-- Para futuras actualizaciones y sepamos donde ir a modificar-->
+		<header> 														<!--Encabezado parcial--> 
+			<h2>El titulo de un blogspot </h2>    						<!-- Tamaño de la letra-->
+			<p>Posted on <time datetime = "2018-08-29T23:31:45+01.00">  <!--Configuracion de fecha y hora-->
+				</time> by <a href="#">Hola</a> 
+				<a href = "#comments">3 comentarios </a> 				<!--Referencia a comentarios en particular--> 
+			</p>
+		</header>
+		<p> Escuela Superior de Computo<br>
+			Instituto Politécnico Nacional
+	</article>
+</section>
+
+
+<!--*********************************************************************************	
+	-Navegación:
+	-->
+	
+	<nav>																<!-- Enlaces a diferentes partes de la página -->
+		<ul>    <!-- Lista no numerada -->
+			<li><a href = "#">Blog</a></li>								<!-- Lista con referencia -->
+			<li><a href = "#">Acerca</a></li>
+			<li><a href = "#">Archivos</a></li>
+			<li><a href = "#">Contactos</a></li>
+			<li class = "suscripcion"><a href = "#">  					<!-- Enlaces o referencias internas en la página
+				Suscripcion via RSS </a></li>
+		</ul>
+	</nav>
+<!--*********************************************************************************
+	Introducción:
+	-->
+	
+	<section id = "intro">
+		<header>
+			<h2>¿Cual es su equipo favorito?</h2>
+		</header>
+		<p>Escuela Superior de Cómputo
+		   Instituto Politécnico Nacional.
+		</p>
+	</section>	
+		
+<!--*********************************************************************************-->
+	-Las regiones Sidebar y Footer
+
+	Por ejemplo, desde un archivo CSS:
+	{
+		margin 0;
+		padding 0;
+	}
+	/*Indica al navegador modificar el HTML5 como un bloque*/
+	header, footer, aside, nav, article{
+		display block;
+	}
+	body{
+		margin:0 auto;												/*(margen de Cero automatico)
+		width: 940px;												/*(tamaño en 940 pixeles)
+		font:13px/22px Helvetica,Arial,sans-serif;					/*(el fondo de 13*22 con fuente helvetica, arial y sans-serif)
+		background: #f0f0f0;										/*(tabla de colores)	
+	}
+	...
+	h2{																/*(fuente)
+		font-size: 28px;											/*(tamaño de las letras 28 pixeles)
+		line-height: 44px;											/*(separacion de letras 24 pixeles)
+		padding: 22px 0;											/*(ancho de las letras 22 pixeles)	
+	}
+	h3{
+		font-size: 18px;
+		line-height: 22px;
+		padding: 11px 0;
+	}
+	p{
+		padding-bottom: 22px;
+	}
+
+	
+	

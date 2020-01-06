@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Puntos en Trinagulo</title>
+	</head>
+	<body>
+		<canvas id = "Puntos en Triangulo" width = "1350" height = "635"  style = "border: 1px solid black;"> 
+		</canvas>
+		<script>
+			var canvas = document.getElementById("Puntos en Triangulo");
+			var contexto = canvas.getContext("2d");
+			var arreglo_vectores = new Array(3);			//Arreglo que contiene los puntos de los vectores
+			var valores_vectores =  new Array(10001);		//Arreglo que contiene los puntos de las iteraciones recursivas 
+			var contador = 1;								//Contador auxiliar que cuenta el numero de iteraciones
+			var color;
+			for(var i = 1; i <= 3; i++)						
+				arreglo_vectores[i] =  new Array(2);
+				
+															//Vector 1	
+			arreglo_vectores[1][1] = 675;
+			arreglo_vectores[1][2] = 5;
+															//Vector 2	
+			arreglo_vectores[2][1] = 317.5;
+			arreglo_vectores[2][2] = 625;
+															//Vector 3	
+			arreglo_vectores[3][1] = 1022.5;
+			arreglo_vectores[3][2] = 625;
+			
+			contexto.beginPath(); 							// Vertice 1
+			contexto.moveTo(675, 6); 						// origen de la ruta 
+			contexto.lineTo(675, 5);
+			contexto.lineTo(317.5, 626.5);
+			contexto.lineWidth = 1; 						// anchura de la linea
+			contexto.strokeStyle = "black"					// color de la linea
+			contexto.stroke();
+			
+			contexto.beginPath(); 							// Vertice 2
+			contexto.moveTo(317.5, 625);					// origen de la ruta 
+			//contexto.lineTo(327.5, 625);
+			contexto.lineTo(320.5, 626);
+			contexto.lineTo(1015.5, 625);
+			contexto.lineWidth = 1; 						// anchura de la linea
+			contexto.strokeStyle = "black"					// color de la linea
+			contexto.stroke();
+			
+			contexto.beginPath(); 							// Vertice 3
+			contexto.moveTo(1015.5, 625); 					// origen de la ruta 
+			contexto.lineTo(1020.5, 625);
+			contexto.lineTo(675, 5);
+			contexto.lineWidth = 1; 						// anchura de la linea
+			contexto.strokeStyle = "black"					// color de la linea
+			contexto.stroke();
+			
+			var x = punto_aleatoriox();
+			var y = punto_aleatorioy();
+			
+			function punto_aleatoriox(){
+				var rango = Math.floor ( 1 + Math.random() * 2);
+				var limite;
+				if(rango == 1){
+					limite = Math.floor ((Math.random() * 300) + 1);
+				}
+				else if(rango == 2){
+					limite = Math.floor ((Math.random() * 201) + 1000);
+				}
+				return limite;
+			}
+			
+			function punto_aleatorioy(){
+				return Math.floor ( 1 + Math.random() * 500);
+			}
+			
+			//punto P aleatorio
+			contexto.beginPath(); 			// Punto aleatorio
+			contexto.moveTo(x, y); 	// origen de la ruta 
+			contexto.lineTo(x, y + 1);
+			contexto.fillText("Punto P", x, y);
+			contexto.lineWidth = 5; 		// anchura de la linea
+			contexto.strokeStyle = "black"	// color de la linea
+			contexto.stroke();
+			
+			valores_vectores[contador] = x;
+			valores_vectores[contador + 1] = y;
+			var posicion_vector = vector_aleatorio();//Se obtiene de forma aleatoria cualquier vector
+			
+			function colores(aleatorio){
+				var aux;
+				if(aleatorio == 1){
+					aux = "black";
+				}
+				else if(aleatorio == 2){
+					aux = "green";
+				}
+				else if(aleatorio == 3){
+					aux = "red";
+				}
+				return aux;
+			}
+			
+			for(var i = 1; i <= 500000; i++){
+				contexto.beginPath();
+				var posicion_vector = vector_aleatorio();//Se obtiene de forma aleatoria cualquier vector
+				var nuevo_x = parseFloat((valores_vectores[contador] + arreglo_vectores[posicion_vector][1]) / 2); 		 //Punto medio entre puntos x
+				var nuevo_y = parseFloat((valores_vectores[contador + 1] + arreglo_vectores[posicion_vector][2]) / 2); //Punto medio entre puntos x
+				contexto.moveTo(nuevo_x, nuevo_y); 		// origen de la ruta 
+				contexto.lineTo(nuevo_x + 1, nuevo_y + 1);
+				contador += 2;
+				valores_vectores[contador] = nuevo_x;
+				valores_vectores[contador + 1] = nuevo_y;
+				color = colores(posicion_vector);
+				contexto.lineWidth = 1; 		// anchura de la linea
+				contexto.strokeStyle = color;	// color de la linea
+				contexto.stroke();
+			
+			}
+			
+			function vector_aleatorio(){
+				return Math.floor ( 1 + Math.random() * 3);
+			}
+			
+			
+		</script>	
+	</body>
+</html>	

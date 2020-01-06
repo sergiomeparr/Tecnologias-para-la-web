@@ -1,0 +1,4 @@
+Actualizar la pagina de las flores con el contenido de una estrofa del
+himno nacional.
+Incluir las imagenes pertinentes y las secciones con la información
+necesaria.
